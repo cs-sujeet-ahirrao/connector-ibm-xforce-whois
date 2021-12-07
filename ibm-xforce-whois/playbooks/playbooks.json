@@ -1,0 +1,119 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - IBM X-Force WHOIS - 1.0.0",
+      "description": "Sample playbooks for \"IBM X-Force WHOIS\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/88221120-bfdd-41b2-830a-6dc30e3e2757",
+      "uuid": "bc2a23c3-046c-4322-9c69-be46fafa5989",
+      "id": 165,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1638263280,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1638263280,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get WHOIS Information",
+          "aliasName": null,
+          "tag": "#IBM X-Force WHOIS",
+          "description": "Returns WHOIS information for an IP, URL or domain.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1638263375,
+          "collection": "/api/3/workflow_collections/bc2a23c3-046c-4322-9c69-be46fafa5989",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/00b6b130-e0cb-4a43-ad66-1388a6c179e6",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "cdbf13a6-b10e-4053-b1e2-0934c8dfcc1e",
+                "title": "IBM X-Force WHOIS: Get WHOIS Information",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "00b6b130-e0cb-4a43-ad66-1388a6c179e6",
+              "id": 5842
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get WHOIS Information",
+              "description": null,
+              "arguments": {
+                "name": "IBM X-Force WHOIS",
+                "config": "518a46f8-b403-425d-a570-55f608b6b1af",
+                "params": {
+                  "host": "gumblar.cn"
+                },
+                "version": "1.0.0",
+                "connector": "ibm-xforce-whois",
+                "operation": "get_whois_info",
+                "operationTitle": "Get WHOIS Information",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "0024e99e-37a2-4e42-84f8-185f65bfd4fe",
+              "id": 5843
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get WHOIS Information",
+              "targetStep": "/api/3/workflow_steps/0024e99e-37a2-4e42-84f8-185f65bfd4fe",
+              "sourceStep": "/api/3/workflow_steps/00b6b130-e0cb-4a43-ad66-1388a6c179e6",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "97af29e3-db3d-4ffc-8d96-7221a978d189"
+            }
+          ],
+          "priority": null,
+          "uuid": "098bb674-2bab-4275-94b1-3c6bfe93feb4",
+          "recordTags": [
+            "IBM X-Force",
+            "WHOIS"
+          ],
+          "id": 1490,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1638263280,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1638263376,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "IBM X-Force",
+    "WHOIS"
+  ]
+}

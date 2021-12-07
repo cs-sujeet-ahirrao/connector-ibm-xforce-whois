@@ -1,0 +1,114 @@
+{
+  "name": "ibm-xforce-whois",
+  "label": "IBM X-Force WHOIS",
+  "description": "Returns the WHOIS information for an IP, URL or domain.",
+  "publisher": "Community",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "value": "https://api.xforce.ibmcloud.com"
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key"
+      },
+      {
+        "title": "API Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_password"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_whois_info",
+      "title": "Get WHOIS Information",
+      "description": "Returns WHOIS information for an IP, URL or domain.",
+      "category": "investigation",
+      "annotation": "get_collections",
+      "output_schema": {
+        "createdDate": "",
+        "updatedDate": "",
+        "netRange": "",
+        "contact": [
+          {
+            "type": "",
+            "organization": "",
+            "country": ""
+          }
+        ],
+        "extended": {
+          "createdDate": "",
+          "updatedDate": "",
+          "netRange": "",
+          "contactEmail": "",
+          "registrarName": "",
+          "contact": [
+            {
+              "type": "",
+              "organization": "",
+              "country": ""
+            }
+          ],
+          "sub": [
+            {
+              "createdDate": "",
+              "updatedDate": "",
+              "netRange": "",
+              "contact": [
+                {
+                  "type": "",
+                  "organization": "",
+                  "country": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Host",
+          "name": "host",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "placeholder": "IP, URL or Domain",
+          "tooltip": "Specify the Host information e.g. IP, URL or Domain.",
+          "description": "Specify the Host information e.g. IP, URL or Domain."
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
