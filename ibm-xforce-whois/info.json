@@ -3,7 +3,7 @@
   "label": "IBM X-Force WHOIS",
   "description": "Returns the WHOIS information for an IP, URL or domain.",
   "publisher": "Community",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "Threat Intelligence",
@@ -54,7 +54,7 @@
       "title": "Get WHOIS Information",
       "description": "Returns WHOIS information for an IP, URL or domain.",
       "category": "investigation",
-      "annotation": "get_collections",
+      "annotation": "get_whois_info",
       "output_schema": {
         "createdDate": "",
         "updatedDate": "",

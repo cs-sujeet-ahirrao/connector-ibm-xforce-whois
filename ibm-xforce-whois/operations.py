@@ -51,9 +51,9 @@ class IBMXWHOIS(object):
 
 
 def get_whois_info(config, params):
-    ip_rep = IBMXWHOIS(config)
+    whois = IBMXWHOIS(config)
     endpoint = 'whois/' + str(params.get('host'))
-    return ip_rep.make_request(endpoint=endpoint)
+    return whois.make_request(endpoint=endpoint)
 
 
 def _check_health(config):
